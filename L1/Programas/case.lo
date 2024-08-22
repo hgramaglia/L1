@@ -1,0 +1,23 @@
+
+z = 0,
+f    =  (\z. (*2) z),
+g    =  (\xs. case lo xs of  ([] , (z:zs)  -> (f z : zs)))
+----------------------------------
+g ( (1:(2:[])) )
+----------------------------------
+*2  : lo int -> lo int,
+[]  : lo [lo int],
+:   : (lo int, lo [lo int]) -> lo [lo int],
+1   : lo int,
+:   : (lo int, lo [lo int]) -> lo [lo int],
+2   : lo int,
+:   : (lo int, lo [lo int]) -> lo [lo int],
+[]  : lo [lo int]
+------------------------------------
+z    : z int,
+f    : \z:z int. z int,
+g    : \xs:lo [lo int]. lo [lo int]
+----------------------------------
+lo [lo int]
+----------------------------------
+

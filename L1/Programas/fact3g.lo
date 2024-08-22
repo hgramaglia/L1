@@ -1,0 +1,18 @@
+
+w    = 1,
+x    = 12,
+fact = (\(w,x). if (==0) x then (w,x) else fact (x * w, (-1) x))
+-----------------------------
+fact (w,x) 
+-----------------------------
+==0 : lo int ->   lo bool,
+*   : (lo int,lo int) -> lo int,
+-1  : lo int -> lo int
+-----------------------------
+w   : w int,
+x   : x int,
+fact : \(w,x):(lo int,lo int). (w int,x int)
+-----------------------------
+(w int,x int)
+-----------------------------
+

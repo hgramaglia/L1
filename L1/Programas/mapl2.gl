@@ -1,0 +1,62 @@
+
+
+n = 15,
+x = 0,
+f = (\z . (*2) z),
+list = (\(n,x) . if (==0) n then p1(p1([],n),x) else (id(x):list (((-1) n,(+1) x)))),
+map = (\(f,xs) . (case lo xs of (p1([],xs),(z:zs)->xs[f (z):map ((f,zs))])))
+------------------------------------
+map ((f,list ((n,x))))
+------------------------------------
+*2  : z int-> z int,
+==0 : n int-> lo bool,
+p1  : (lo [lo int],x int)-> lo [lo int],
+p1  : (lo [lo int],n int)-> lo [lo int],
+[]  : lo [lo int],
+id  : x int-> lo int,
+:   : (lo int,lo [lo int])-> lo [lo int],
+-1  : n int-> n int,
++1  : x int-> x int,
+p1  : (lo [lo int],xs [lo int])-> xs [lo int],
+[]  : lo [lo int],
+[:] : (xs [lo int],lo int,lo [lo int])-> xs [lo int]
+------------------------------------
+n : n int,
+x : x int,
+f : \z:lo int.z int,
+list : \(n,x):(n int,x int).lo [lo int],
+map : \(f,xs):(\z:lo int.z int,lo [lo int]).xs [lo int]
+------------------------------------
+lo [lo int]
+------------------------------------
+
+
+n = 15,
+x = 0,
+f = (\z . (*2) z),
+list = (\(n,x) . if (==0) n then p1(p1([],n),x) else (id(x):list (((-1) n,(+1) x)))),
+map = (\(f,xs) . (case lo xs of (p1([],xs),(z:zs)->xs[f (z):map ((f,zs))])))
+------------------------------------
+map ((f,list ((n,x))))
+------------------------------------
+*2  : z int-> z int,
+==0 : n int-> lo bool,
+p1  : (lo [lo int],x int)-> lo [lo int],
+p1  : (lo [lo int],n int)-> lo [lo int],
+[]  : lo [lo int],
+id  : x int-> x int,
+:   : (x int,lo [lo int])-> lo [lo int],
+-1  : n int-> n int,
++1  : x int-> x int,
+p1  : (lo [lo int],xs [lo int])-> xs [lo int],
+[]  : lo [lo int],
+[:] : (xs [lo int],lo int,lo [lo int])-> xs [lo int]
+------------------------------------
+n : n int,
+x : x int,
+f : \z:lo int.z int,
+list : \(n,x):(n int,x int).lo [lo int],
+map : \(f,xs):(\z:lo int.z int,lo [lo int]).xs [lo int]
+------------------------------------
+lo [lo int]
+------------------------------------

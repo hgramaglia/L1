@@ -1,0 +1,21 @@
+
+
+fib = (\x. if (==0) x then (x,1,1)
+                      else let (x,w,y) = fib ((-1) x) in  (x,id(y),w + y)
+      )
+----------------------------
+fib 30
+----------------------------
+==0 : lo int -> lo bool,
+1   : lo int,
+1   : lo int,
+-1  : lo int -> lo int,
+id  : lo int -> lo int,
++   : (lo int,lo int) -> lo int,
+30  : lo int
+----------------------------
+fib : \x:lo int. (x int,w int,y int)
+---------------------------
+(lo int,w int,y int)
+---------------------------
+

@@ -1,0 +1,29 @@
+
+
+x   = 20,
+w   = 1,
+y   = 1,
+z   = 1,
+fib = (\(x,w,y,z) . if (==0) x then (x,w,y,z) 
+                               else let (x,w,y,z) = fib ((-1) x,w,y,z) 
+                                    in let z = p2(z,w) in (x,p2(w,y),z+y,z)
+      )
+------------------------------------
+fib (x,w,y,z)
+------------------------------------
+==0 : un int -> un bool,
+-1  : un int -> un int,
+p2 : (un int,un int) -> un int,
+p2 : (un int,un int) -> un int,
++  : (un int,un int) -> un int
+------------------------------------
+x  : su int,
+w  : su int,
+y  : su int,
+z  : su int,
+fib : (su int,su int,su int,su int) -> (su int,su int,su int,su int)
+------------------------------------
+(su int,su int,su int,su int)
+------------------------------------
+
+

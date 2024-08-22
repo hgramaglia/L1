@@ -1,0 +1,36 @@
+
+n = 15,
+x = 0,
+list =  (\(n,x). if (==0) n then p1(p1([],n),x) else (id(x) : list ((-1) n,(+1) x))),
+ins  =  (\(w,xs). case lo xs of  ((w:[]),
+                                  (z:zs)  -> if w<=z then  (w:(z:zs)) else (z : ins (w,zs))
+                                 ))
+----------------------------------
+ins (15,list (n,x))
+----------------------------------
+==0 : lo int -> lo bool,
+p1  : (lo [lo int],lo int) -> lo [lo int],
+p1  : (lo [lo int],lo int) -> lo [lo int],
+[]  : lo [lo int],
+id  : lo int -> lo int,
+:   : (lo int, lo [lo int]) -> lo [lo int],
+-1  : lo int -> lo int,
++1  : lo int -> lo int,
+:   : (lo int, lo [lo int]) -> lo [lo int],
+[]  : lo [lo int],
+<=  : (lo int,lo int) -> lo bool,
+:   : (lo int, lo [lo int]) -> lo [lo int],
+:   : (lo int, lo [lo int]) -> lo [lo int],
+:   : (lo int, lo [lo int]) -> lo [lo int],
+15  : lo int,
+15  : lo int,
+0   : lo int
+------------------------------------
+n    : n int,
+x    : x int,
+list : \(n,x):(n int,x int). lo [lo int],
+ins  : \(w,xs):(lo int,lo [lo int]). xs [lo int]
+----------------------------------
+lo [lo int]
+----------------------------------
+

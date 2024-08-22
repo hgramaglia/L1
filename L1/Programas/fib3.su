@@ -1,0 +1,18 @@
+
+
+fib = (\(x,w,y) . if (==0) x then (x,w,y) else (let (x,w,y) = fib (((-1) x,w,y)) in (x,p2(w,y),(w+y))))
+------------------------------------
+fib ((30,1,1))
+------------------------------------
+==0 : hi int-> su bool,
+-1  : su int-> su int,
+p2  : (hi int,hi int)-> su int,
++   : (su int,su int)-> su int,
+30  : su int,
+1   : su int,
+1   : su int
+------------------------------------
+fib : (su int,su int,su int)-> (su int,su int,su int)
+------------------------------------
+(su int,su int,su int)
+------------------------------------

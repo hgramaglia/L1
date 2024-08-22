@@ -1,0 +1,58 @@
+
+A = {0,1,2,3,2,1,0,1},
+fun = (\z. (+1) z),
+map = (\(A,i,n) . if (i==n) then (A,i,n) else let z = A[i] in map (A[i<-fun z],(+1) i,n))
+------------------------------------
+map ((A,0,8))
+------------------------------------
++1  : lo int -> lo int,
+==  : (lo int,lo int) -> lo bool,
+ent : (lo array, lo int) -> lo int,
+upd : (lo array,lo int,lo int) -> lo array,
++1  : lo int -> lo int,
+0   : lo int,
+8   : lo int
+------------------------------------
+A : A array,
+fun : \z:lo int. z int,
+map : \(A,i,n):(A array,lo int,lo int).(A array,i int,n int)
+------------------------------------
+(A array,lo int,lo int)
+------------------------------------
+Full lineal protegido pero no LI-match. Luego es global improvement pero no es full imperativo.
+
+
+
+____ PRODUCCIÓN DEL ALGORITMO DE GLOBALIZACIÓN ____________________________
+
+
+
+A = {0,1,2,3,2,1,0,1},
+fun = (\z . (+1) z),
+map = (\(A,i,n) . if (i==n) then (A,i,n) else (let z = A[i] in map ((A[i<-fun (z)],(+1) i,n))))
+------------------------------------
+map ((A,0,8))
+------------------------------------
++1  : z int-> z int,
+==  : (i int,n int)-> lo bool,
+ent : (A array,i int)-> lo int,
+upd : (A array,i int,lo int)-> A array,
++1  : i int-> i int,
+0   : lo int,
+8   : lo int
+------------------------------------
+A : A array,
+fun : \z:lo int.z int,
+map : \(A,i,n):(A array,lo int,lo int).(A array,i int,n int)
+------------------------------------
+(A array,lo int,lo int)
+------------------------------------
+A = {0,1,2,3,2,1,0,1},
+fun = (\z . z:=(+1) z),
+map = (\((),i,n) . (if (i==n) then (A,i,n) else (let z = A[i] in map ((A[i]:=fun (z),i:=(+1) i,n))))),
+map ((A,0,8))
+------------------------------------
+Test global: CORRECTO
+Ratio mem: 10/90    Ratio pp:  34/43
+La ejecución global es correcta
+------------------------------------

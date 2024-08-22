@@ -1,0 +1,21 @@
+A = {0,1,2,3,2,1,0,1},
+fun = (\x. (+1) x),
+map = (\(A,i,n) . if (i==n) then (A,i,n) else let z = A[i] in map (A[i<-fun z],(+1) i,n))
+------------------------------------
+map ((A,0,8))
+------------------------------------
++1  : un int -> un int,
+==  : (un int,un int) -> un bool,
+ent : (un array, un int) -> un int,
+upd : (un array,un int,un int) -> un array,
++1  : un int -> un int,
+0   : un int,
+8   : un int
+------------------------------------
+A : su array,
+fun : su int -> su int,
+map : (su array,su int,su int) -> (su array,su int,su int)
+------------------------------------
+
+------------------------------------
+

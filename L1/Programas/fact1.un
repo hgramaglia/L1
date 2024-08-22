@@ -1,0 +1,19 @@
+
+
+
+
+
+fact = \x. if (== 0) x then 1 else x * fact ((-1) x)
+-----------------------------
+fact 10
+-----------------------------
+==0 : un int -> un bool,
+1   : un int,
+*   : (un int,un int) -> un int,
+-1  : un int -> un int,
+10  : un int
+-----------------------------
+fact : un int -> su int
+-----------------------------
+
+

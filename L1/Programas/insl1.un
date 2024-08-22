@@ -1,0 +1,35 @@
+
+
+n = 15,
+x = 0,
+list =  (\(n,x). if (==0) n then p1(p1([],n),x) else (id(x) : list ((-1) n,(+1) x))),
+ins  =  (\(x,xs). case un xs of  ((x:[]),
+                                  (z:zs)  -> if x<=z then  (x:(z:zs)) else (z : ins (x,zs))
+                                 ))
+----------------------------------
+ins (15,list (n,x))
+----------------------------------
+==0 : un int -> un bool,
+p1  : (su [su int],su int) -> su [su int],
+p1  : (su [su int],su int) -> su [su int],
+[]  : su [su int],
+id  : un int -> un int,
+:   : (su int, su [su int]) -> su [su int],
+-1  : un int -> un int,
++1  : un int -> un int,
+:   : (su int, su [su int]) -> su [su int],
+[]  : su [su int],
+<=  : (un int,un int) -> un bool,
+:   : (su int, su [su int]) -> su [su int],
+:   : (su int, su [su int]) -> su [su int],
+:   : (su int, su [su int]) -> su [su int],
+15  : un int
+------------------------------------
+n    : su int,
+x    : su int,
+list : (su int,su int) -> su [su int],
+ins  : (su int,su [su int]) -> su [su int]
+----------------------------------
+
+----------------------------------
+

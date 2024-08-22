@@ -1,0 +1,22 @@
+
+
+f    =  (\z. (*2) z),
+g    =  (\xs. case un xs of  ( [], (z:zs)  -> (f z : zs)))
+----------------------------------
+g ( (1:(2:[])) )
+----------------------------------
+*2  : su int -> su int,
+[]  : un [un int],
+:   : (su int,su [su int])-> su [su int],
+1   : su int,
+:   : (su int, su [su int]) -> su [su int],
+2   : su int,
+:   : (su int, su [su int]) -> su [su int],
+[]  : su [su int]
+------------------------------------
+f    : su int -> su int,
+g    : su [su int] -> su [su int]
+----------------------------------
+
+----------------------------------
+

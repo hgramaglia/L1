@@ -1,0 +1,19 @@
+
+
+fib = (\(x,w,y) . if (==0) x then (x,w,y) else (let (x,w,y) = fib (((-1) x,w,y)) in (let z = id(w) in (x,p2(w,y),(z+y)))))
+------------------------------------
+fib ((20,1,1))
+------------------------------------
+==0 : x int-> lo bool,
+-1  : x int-> x int,
+id  : w int-> lo int,
+p2  : (w int,y int)-> w int,
++   : (lo int,y int)-> y int,
+20  : lo int,
+1   : lo int,
+1   : lo int
+------------------------------------
+fib : \(x,w,y):(lo int,lo int,lo int).(x int,w int,y int)
+------------------------------------
+(lo int,lo int,lo int)
+------------------------------------

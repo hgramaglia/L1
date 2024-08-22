@@ -1,0 +1,51 @@
+
+
+
+fib = (\x. if (==0) x then (x,1,1)
+                      else let (x,w,y) = fib ((-1) x) in  (x,id(y),w + y)
+      )
+----------------------------
+fib 30
+----------------------------
+==0 : un int -> un bool,
+1   : un int,
+1   : un int,
+-1  : un int -> un int,
+id  : un int -> un int,
++   : (un int,un int) -> un int,
+30  : un int
+----------------------------
+fib : su int -> (su int,su int,su int)
+----------------------------
+
+
+
+
+
+
+
+
+____ PRODUCCIÓN DEL ALGORITMO DE SUBESTRUCTURALIZACIÓN ____________________
+
+
+
+fib = (\x . if (==0) x then (x,1,1) else (let (x,w,y) = fib ((-1) x) in (x,id(y),(w+y))))
+------------------------------------
+fib (30)
+------------------------------------
+==0 : hi int -> su bool,
+1   : su int,
+1   : su int,
+-1  : su int -> su int,
+id  : hi int -> su int,
++   : (su int,su int) -> su int,
+30  : su int
+------------------------------------
+fib : su int -> (su int,su int,su int)
+------------------------------------
+(su int,su int,su int)
+------------------------------------
+Test subestructural: CORRECTO
+Ratio mem: 4/93    Ratio pp:  121/121
+La ejecución subestructural  NO SE INTERRUMPE
+------------------------------------

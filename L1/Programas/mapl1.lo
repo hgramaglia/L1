@@ -1,0 +1,34 @@
+
+n = 20,
+x = 0,
+f    =  (\z. (*2) z),
+list =  (\(n,x). if (==0) n then p1(p1([],n),x) else (id(x) : list ((-1) n,(+1) x))),
+map  =  (\(f,xs). case lo xs of  ([],
+                                  (z:zs)  -> (f z : map (f,zs))
+                                 ))
+----------------------------------
+map (f,list (n,x))
+----------------------------------
+*2  : lo int -> lo int,
+==0 : lo int -> lo bool,
+p1  : (lo [lo int],lo int) -> lo [lo int],
+p1  : (lo [lo int],lo int) -> lo [lo int],
+[]  : lo [lo int],
+id  : lo int -> lo int,
+:   : (lo int,lo [lo int]) -> lo [lo int],
+-1  : lo int -> lo int,
++1  : lo int -> lo int,
+[]  : lo [lo int],
+:   : (lo int,lo [lo int]) -> lo [lo int],
+15  : lo int,
+0   : lo int
+------------------------------------
+n    : n int,
+x    : x int,
+f    : \z:lo int. z int,
+list : \(n,x):(n int,x int). lo [lo int],
+map  : \(f,xs):(\z:lo int. z int,lo [lo int]). xs [lo int]
+----------------------------------
+lo [lo int]
+----------------------------------
+

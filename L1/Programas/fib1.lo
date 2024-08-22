@@ -1,0 +1,48 @@
+
+
+
+fib = (\x. if (==0) x then (x,1,1)
+                       else let (x,w,r) = fib ((-1) x) in  (x, r , w + r)
+      )
+----------------------------
+fib 20
+----------------------------
+==0 : lo int -> lo bool,
+1   : lo int,
+1   : lo int,
+-1  : lo int -> lo int,
++   : (lo int,lo int) -> lo int,
+20  : lo int
+----------------------------
+fib : \x:lo int. (x int,lo int,lo int) 
+---------------------
+(lo int,lo int,lo int)
+----------------------
+Protected LI-match. Since linear memory ratio is $1/2$, it is neither linear improvement nor global improvement.
+
+____ PRODUCCIÓN DEL ALGORITMO DE GLOBALIZACIÓN ____________________________
+
+
+
+fib = (\x . if (==0) x then (x,1,1) else (let (x,w,r) = fib ((-1) x) in (x,r,(w+r))))
+------------------------------------
+fib (20)
+------------------------------------
+==0 : x int-> lo bool,
+1   : lo int,
+1   : lo int,
+-1  : x int-> x int,
++   : (lo int,lo int)-> lo int,
+20  : lo int
+------------------------------------
+fib : \x:lo int.(x int,lo int,lo int)
+------------------------------------
+(lo int,lo int,lo int)
+------------------------------------
+fib = (\x . (if (==0) x then (x,1,1) else (let (x,w,r) = fib (x:=(-1) x) in (x,r,(w+r))))),
+fib (20)
+------------------------------------
+Test global: CORRECTO
+Ratio mem: 23/43    Ratio pp:  81/81
+La ejecución global es correcta
+------------------------------------

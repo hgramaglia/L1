@@ -1,0 +1,41 @@
+
+
+fib = (\(x,w,y) . if (==0) x then (x,w,y) else (let (x,w,y) = fib (((-1) x,w,y)) in (let z = id(w) in (x,p2(w,y),(z+y)))))
+------------------------------------
+fib ((20,1,1))
+------------------------------------
+==0 : hi int-> su bool,
+-1  : su int-> su int,
+id  : hi int-> su int,
+p2  : (su int,hi int)-> su int,
++   : (su int,su int)-> su int,
+20  : su int,
+1   : su int,
+1   : su int
+------------------------------------
+fib : (su int,su int,su int)-> (su int,su int,su int)
+------------------------------------
+(su int,su int,su int)
+------------------------------------
+
+
+
+fib = (\(x,w,y) . if (==0) x then (x,w,y) else (let (x,w,y) = fib (((-1) x,w,y)) in (let z = id(w) in (x,p2(w,y),(z+y)))))
+------------------------------------
+fib ((20,1,1))
+------------------------------------
+==0 : hi int-> su bool,
+-1  : su int-> su int,
+id  : hi int-> un int,
+p2  : (su int,hi int)-> su int,
++   : (un int,su int)-> su int,
+20  : su int,
+1   : su int,
+1   : su int
+------------------------------------
+fib : (su int,su int,su int)-> (su int,su int,su int)
+------------------------------------
+(su int,su int,su int)
+------------------------------------
+
+

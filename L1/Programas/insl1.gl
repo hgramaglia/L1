@@ -1,0 +1,64 @@
+
+
+n = 15,
+x = 0,
+list = (\(n,x) . if (==0) n then p1(p1([],n),x) else (id(x):list (((-1) n,(+1) x)))),
+ins = (\(w,xs) . (case lo xs of ((w:[]),(z:zs)->if (w<=z) then (w:(z:zs)) else (z:ins ((w,zs))))))
+------------------------------------
+ins ((15,list ((n,x))))
+------------------------------------
+==0 : n int-> lo bool,
+p1  : (lo [lo int],x int)-> lo [lo int],
+p1  : (lo [lo int],n int)-> lo [lo int],
+[]  : lo [lo int],
+id  : x int-> lo int,
+:   : (lo int,lo [lo int])-> lo [lo int],
+-1  : n int-> n int,
++1  : x int-> x int,
+:   : (lo int,lo [lo int])-> xs [lo int],
+[]  : lo [lo int],
+<=  : (lo int,lo int)-> lo bool,
+:   : (lo int,lo [lo int])-> xs [lo int],
+:   : (lo int,lo [lo int])-> lo [lo int],
+:   : (lo int,lo [lo int])-> xs [lo int],
+15  : lo int
+------------------------------------
+n : n int,
+x : x int,
+list : \(n,x):(n int,x int).lo [lo int],
+ins : \(w,xs):(lo int,lo [lo int]).xs [lo int]
+------------------------------------
+lo [lo int]
+------------------------------------
+
+
+n = 15,
+x = 0,
+list = (\(n,x) . if (==0) n then p1(p1([],n),x) else (id(x):list (((-1) n,(+1) x)))),
+ins = (\(w,xs) . (case lo xs of ((w:[]),(z:zs)->if (w<=z) then (w:(z:zs)) else (z:ins ((w,zs))))))
+------------------------------------
+ins ((15,list ((n,x))))
+------------------------------------
+==0 : n int-> lo bool,
+p1  : (lo [lo int],x int)-> lo [lo int],
+p1  : (lo [lo int],n int)-> lo [lo int],
+[]  : lo [lo int],
+id  : x int-> x int,
+:   : (x int,lo [lo int])-> lo [lo int],
+-1  : n int-> n int,
++1  : x int-> x int,
+:   : (lo int,lo [lo int])-> xs [lo int],
+[]  : lo [lo int],
+<=  : (lo int,lo int)-> lo bool,
+:   : (lo int,lo [lo int])-> xs [lo int],
+:   : (lo int,lo [lo int])-> lo [lo int],
+:   : (lo int,lo [lo int])-> xs [lo int],
+15  : lo int
+------------------------------------
+n : n int,
+x : x int,
+list : \(n,x):(n int,x int).lo [lo int],
+ins : \(w,xs):(lo int,lo [lo int]).xs [lo int]
+------------------------------------
+lo [lo int]
+------------------------------------

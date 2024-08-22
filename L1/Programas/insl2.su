@@ -1,0 +1,64 @@
+
+
+n = 15,
+y = 0,
+list = (\(n,y) . if (==0) n then p1(p1([],n),y) else (id(y):list (((-1) n,(+1) y)))),
+ins = (\(x,xs) . (case hi xs of (xs[x:[]],(z:zs)->if (x<=z) then xs[x:(z:zs)] else xs[z:ins ((x,zs))])))
+------------------------------------
+ins ((15,list ((n,y))))
+------------------------------------
+==0 : hi int-> su bool,
+p1  : (su [su int],su int)-> su [su int],
+p1  : (su [su int],su int)-> su [su int],
+[]  : su [su int],
+id  : hi int-> un int,
+:   : (un int,su [su int])-> su [su int],
+-1  : su int-> su int,
++1  : su int-> su int,
+[:] : (su [su int],su int,su [su int])-> su [su int],
+[]  : su [su int],
+<=  : (hi int,hi int)-> su bool,
+[:] : (su [su int],su int,su [su int])-> su [su int],
+:   : (su int,su [su int])-> su [su int],
+[:] : (su [su int],su int,su [su int])-> su [su int],
+15  : su int
+------------------------------------
+n : su int,
+y : su int,
+list : (su int,su int)-> su [su int],
+ins : (su int,su [su int])-> su [su int]
+------------------------------------
+su [su int]
+------------------------------------
+
+
+n = 15,
+y = 0,
+list = (\(n,y) . if (==0) n then p1(p1([],n),y) else (id(y):list (((-1) n,(+1) y)))),
+ins = (\(x,xs) . (case hi xs of (xs[x:[]],(z:zs)->if (x<=z) then xs[x:(z:zs)] else xs[z:ins ((x,zs))])))
+------------------------------------
+ins ((15,list ((n,y))))
+------------------------------------
+==0 : hi int-> su bool,
+p1  : (su [su int],su int)-> su [su int],
+p1  : (su [su int],su int)-> su [su int],
+[]  : su [su int],
+id  : hi int-> su int,
+:   : (su int,su [su int])-> su [su int],
+-1  : su int-> su int,
++1  : su int-> su int,
+[:] : (su [su int],su int,su [su int])-> su [su int],
+[]  : su [su int],
+<=  : (hi int,hi int)-> su bool,
+[:] : (su [su int],su int,su [su int])-> su [su int],
+:   : (su int,su [su int])-> su [su int],
+[:] : (su [su int],su int,su [su int])-> su [su int],
+15  : su int
+------------------------------------
+n : su int,
+y : su int,
+list : (su int,su int)-> su [su int],
+ins : (su int,su [su int])-> su [su int]
+------------------------------------
+su [su int]
+------------------------------------
