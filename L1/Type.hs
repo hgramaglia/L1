@@ -350,7 +350,7 @@ tExc pi (App f e) lt =   --if f=="f" then error (editPi pi) else
  where tf  =  tau pi f 
 
 tExc pi (Case q e e' (P [VP z,VP zs]) e'' ) lt  =  --error (editPi (comaPip pi2 (P [VP z,VP zs]) lt1))
-     if glp/=[] then 
+     if glp==[] then 
      mtExc (f spls) [e,e',e''] [lth,lt,lt]
      else ["Case con parámetro global: " ++ editss glp ++ "\n" ++ editPi (filter (\(x,t) -> esta x [z,zs]) pi2) ++ "\n"]
  where
